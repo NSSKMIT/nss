@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="NSS EB SIGN IN PAGE">
+    <meta name="author" content="M Rishwanth Kumar">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>NSS EB SIGN IN PAGE</title>
+    <style>
+        body {
+            background: url('https://images.unsplash.com/photo-1554755229-ca4470e07232?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHdlYnNpdGUlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww') center/cover repeat;
+        }
+
+        @media (max-width: 576px) {
+            .col-2 {
+                text-align: center;
+                margin-bottom: 10px;
+            }
+        }
+
+        .small-boxes {
+            margin-top: 50px;
+            padding: 10px;
+            margin: 10px;
+            width: 100%;
+            background: linear-gradient(to left, #2ddddd, #2ddddd);
+        }
+
+        .small-box {
+            height: 30px;
+            text-align: left;
+            line-height: 20px;
+            padding-top: 1px;
+            margin-top: 5px;
+            background-color: #fefefd;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .content-section {
+            margin-top: 20px;
+        }
+
+        .content-section img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .content-box {
+            background-color: #43a7a7;
+            padding: 15px;
+            border: 3px solid #dca6d1;
+            margin-top: 20px; /* Added margin for better spacing */
+        }
+
+        .footer {
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .name {
+            color: #060606;
+        }
+
+        /* File Upload Styles */
+        .file-upload {
+            margin-top: 20px;
+        }
+
+        #fileList {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #fileList li {
+            margin-bottom: 10px;
+        }
+
+        /* Table Styles */
+        .event-table {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .event-table th,
+        .event-table td {
+            border: 1px solid #fefefd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .file-label {
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .file-input {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 0;
+            padding: 0;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            filter: alpha(opacity=0); /* For IE 8 and earlier */
+        }
+
+        .file-btn {
+            background-color: #2ddddd;
+            color: #090909;
+            padding: 8px 15px;
+            border: none;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .event-container {
+            margin-top: 20px;
+        }
+
+        .upload-btn {
+            background-color: #2ddddd;
+            color: #0a0a0a;
+            padding: 5px 15px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .remove-btn {
+            background-color: #ff4d4d;
+            color: #fff;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .event-upload-form {
+            margin-top: 20px;
+        }
+
+        .event-upload-form h2 {
+            margin-bottom: 10px;
+        }
+
+        .event-upload-form table {
+            width: 100%;
+        }
+
+        .event-upload-form table label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .event-upload-form table td {
+            padding-right: 10px;
+        }
+
+        .wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .event-upload-form,
+        .event-container {
+            flex: 1;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <footer class="footer">
+        Designed by <span class="name">M Rishwanth Kumar</span>
+    </footer>
+
+    <div class="container">
+        <!-- Header Row -->
+        <div class="row">
+            <div class="col-2 text-center">
+                <img src="https://www.kmit.in/images/kmit-bar.png" alt="Top Left Image"
+                    class="img-fluid rounded-circle" style="max-width: 150px; max-height: 75px;">
+            </div>
+            <div class="col-6 text-center mx-auto">
+                <h1 class="text-danger mt-3 display-5">NATIONAL SERVICE SCHEME</h1>
+                <h2 class="text-dark small mt-2">Central Sector Scheme of Government of India, Ministry of Youth Affairs
+                    & Sports.</h2>
+            </div>
+            <div class="col-2 text-center">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/90/NSS-symbol.jpeg"
+                    class="img-fluid rounded-circle" style="max-width: 150px; max-height: 80px;">
+            </div>
+        </div>
+
+        <!-- Navigation Row -->
+        <div class="row" style="background-color: #fefefd; padding: 10px;">
+            <div class="col-md-12">
+                <div class="d-flex justify-content-around">
+                    <!-- Navigation Links -->
+                    <div class="col small-box">
+                        <a href="home.html" style="color: #080808;">Home</a>
+                    </div>
+                    <div class="col small-box">
+                        <a href="about_us.html" style="color: #080808;">About Us</a>
+                    </div>
+                    <div class="col small-box">
+                        <a href="gallery.html" style="color: #080808;">Gallery</a>
+                    </div>
+                    <div class="col small-box">
+                        <a href="events.html" style="color: #080808;">Events</a>
+                    </div>
+                    <div class="col small-box">
+                        <a href="blood_community.html"
+                            onclick="window.open(this.href, '_blank'); return false;"
+                            style="color: #080808;">Blood Community</a>
+                    </div>
+                    <div class="col small-box">
+                        <a href="contact_us.html" style="color: #080808;">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Event Upload Form and Event Table -->
+        <div class="wrapper">
+            <div class="event-upload-form">
+                <h2>Upload New Event</h2>
+                <table class="event-table">
+                    <tr>
+                        <td><label for="eventNumber">Event Number:</label></td>
+                        <td><input type="text" id="eventNumber" name="eventNumber"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="eventDescription">Event Description:</label></td>
+                        <td><input type="text" id="eventDescription" name="eventDescription"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="eventDate">Event Date:</label></td>
+                        <td><input type="date" id="eventDate" name="eventDate"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="facultyCount">Number of Faculty:</label></td>
+                        <td><input type="number" id="facultyCount" name="facultyCount" min="0"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="studentCount">Number of Students:</label></td>
+                        <td><input type="number" id="studentCount" name="studentCount" min="0"></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><label for="reportFile">Report File:</label></td>
+                        <td>
+                            <label class="file-label">
+                                <input type="file" class="file-input" id="reportFile" accept=".pdf">
+                                <span class="file-btn">Choose Report File</span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="imageFile">Image File:</label></td>
+                        <td>
+                            <label class="file-label">
+                                <input type="file" class="file-input" id="imageFile" accept=".pdf">
+                                <span class="file-btn">Choose Image File</span>
+                            </label>
+                        </td>
+                    </tr>
+                </table>
+                <button class="upload-btn" onclick="uploadEvent()">Upload Event</button>
+            </div>
+            <div class="event-container">
+                <h2>Events on Events Page</h2>
+                <table class="event-table">
+                    <thead>
+                        <tr>
+                            <th>Event Number</th>
+                            <th>Event Description</th>
+                            <th>Date</th>
+                            <th>NO. of Faculty</th>
+                            <th>No. of Students</th>
+                            <th>Remove</th>
+                        </tr>
+                    </thead>
+                    <tbody id="eventListBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyAdZVWdgrNVd4k-OnaaOBTQp9PiJJmc7yM",
+          authDomain: "nsskmitwebsite.firebaseapp.com",
+          projectId: "nsskmitwebsite",
+          storageBucket: "nsskmitwebsite.appspot.com",
+          messagingSenderId: "749382783019",
+          appId: "1:749382783019:web:df246a10689aac4c245a6e",
+          measurementId: "G-QPPHB5CYPQ"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+
+  // Initialize Firestore
+  var db = firebase.firestore();
+</script>
+
+<script>
+  // Function to update the events list on the sign-in page
+function updateEventsListSignIn() {
+    fetch('')
+        .then(response => response.json())
+        .then(events => {
+            const eventsTableBodySignIn = document.getElementById('eventListBody');
+            eventsTableBodySignIn.innerHTML = '';
+
+            events.forEach(event => {
+                const newRow = document.createElement('tr');
+                newRow.innerHTML = `
+                    <td>${event.eventNumber}</td>
+                    <td>${event.eventDescription}</td>
+                    <td>${event.eventDate}</td>
+                    <td>${event.facultyCount}</td>
+                    <td>${event.studentCount}</td>
+                    <td><button class="remove-btn" onclick="removeEventFromUploadPage('${event.eventNumber}')">Remove</button></td>`;
+                eventsTableBodySignIn.appendChild(newRow);
+            });
+        })
+        .catch(error => {
+            console.error('Error during updateEventsListSignIn:', error);
+        });
+}
+
+
+  // Function to remove an event from the HTML table based on event number
+  function removeEventFromEventsPage(eventNumber) {
+    const eventsListTableBody = document.getElementById('eventListBody');
+    const rowToRemove = eventsListTableBody.querySelector(`#eventRow-${eventNumber}`);
+
+    if (rowToRemove) {
+        eventsListTableBody.removeChild(rowToRemove);
+        console.log(`Event with number ${eventNumber} removed from events page successfully.`);
+    } else {
+        console.error(`Event with number ${eventNumber} not found on events page.`);
+    }
+}
+
+
+
+  // Function to remove an event from the server
+  function removeEventFromServer(eventNumber) {
+      fetch(`/${eventNumber}`, {
+          method: 'DELETE',
+      })
+          .then(response => {
+              if (!response.ok) {
+                  throw new Error(`HTTP error! Status: ${response.status}`);
+              }
+              console.log(`Event with number ${eventNumber} removed from server successfully.`);
+          })
+          .catch(error => {
+              console.error('Error during removeEventFromServer:', error);
+          });
+  }
+
+  // Function to remove an event from the HTML table and the server
+  function removeEventFromUploadPage(eventNumber) {
+      removeEventFromServer(eventNumber); // Remove from the server first
+
+      // Remove from the HTML table after the server request is successful
+      removeEventFromEventsPage(eventNumber);
+  }
+
+  // Function to update the events list on the events page
+  function updateEventsListFromEventsPage() {
+      fetch('')
+          .then(response => response.json())
+          .then(events => {
+              const eventsListTableBody = document.getElementById('eventListBody');
+              eventsListTableBody.innerHTML = '';
+
+              events.forEach(event => {
+                  const newRow = document.createElement('tr');
+                  newRow.innerHTML = `
+                      <td>${event.eventNumber}</td>
+                      <td>${event.eventDescription}</td>
+                      <td>${event.eventDate}</td>
+                      <td>${event.facultyCount}</td>
+                      <td>${event.studentCount}</td>
+                      <td><button class="remove-btn" onclick="removeEventFromUploadPage('${event.eventNumber}')">Remove</button></td>
+                  `;
+                  newRow.id = `eventRow-${event.eventNumber}`;
+                  eventsListTableBody.appendChild(newRow);
+              });
+          })
+          .catch(error => {
+              console.error('Error during updateEventsListFromEventsPage:', error);
+          });
+  }
+
+  // Call the function to initially load events on the sign-in page
+  document.addEventListener('DOMContentLoaded', updateEventsListSignIn);
+
+  // Additional JavaScript specific to the events page
+  document.addEventListener('DOMContentLoaded', function () {
+      updateEventsListFromEventsPage();
+  });
+
+  // Function to upload a new event
+  function uploadEvent() {
+    const eventNumber = document.getElementById('eventNumber').value;
+    const eventDescription = document.getElementById('eventDescription').value;
+    const eventDate = document.getElementById('eventDate').value;
+    const facultyCount = document.getElementById('facultyCount').value;
+    const studentCount = document.getElementById('studentCount').value;
+    const reportFileInput = document.getElementById('reportFile');
+    const imageFileInput = document.getElementById('imageFile');
+
+    if (!reportFileInput.files.length || !imageFileInput.files.length) {
+        console.error('Please select both report and image files.');
+        return;
+    }
+
+    const formData = new FormData();
+    formData.append('eventNumber', eventNumber);
+    formData.append('eventDescription', eventDescription);
+    formData.append('eventDate', eventDate);
+    formData.append('facultyCount', facultyCount);
+    formData.append('studentCount', studentCount);
+    formData.append('reportFile', reportFileInput.files[0]);
+    formData.append('imageFile', imageFileInput.files[0]);
+
+    // Add data to Firestore
+    db.collection("events").add({
+      eventNumber: eventNumber,
+      eventDescription: eventDescription,
+      eventDate: eventDate,
+      facultyCount: parseInt(facultyCount),
+      studentCount: parseInt(studentCount),
+      // Add other fields as needed
+    })
+    .then(function(docRef) {
+      console.log("Event uploaded with ID: ", docRef.id);
+      // Redirect to another page after uploading
+      window.location.href = "events.html";
+    })
+    .catch(function(error) {
+      console.error("Error uploading event: ", error);
+    });
+  }
+</script>
+</body>
+
+</html>

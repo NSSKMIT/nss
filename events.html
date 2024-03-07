@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Description of your webpage">
+    <meta name="author" content="Your Name">
+    <meta name="viewport" content="width=1024, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>LIST OF EVENTS</title>
+    <style>
+        body {
+            background: url('https://images.unsplash.com/photo-1554755229-ca4470e07232?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHdlYnNpdGUlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww') center/cover repeat;
+        }
+
+        @media (max-width: 576px) {
+            .col-2 {
+                text-align: center;
+                margin-bottom: 10px;
+            }
+        }
+
+        .designed-by {
+            font-weight: bold;
+        }
+
+        .small-boxes {
+            margin-top: 50px;
+            padding: 10px;
+            margin: 10px;
+            width: 100%;
+            background: linear-gradient(to left, #2ddddd, #2ddddd);
+        }
+
+        .small-box {
+            height: 30px;
+            text-align: left;
+            line-height: 20px;
+            padding-top: 1px;
+            margin-top: 5px;
+            background-color: #fefefd;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .content-section {
+            margin-top: 20px;
+        }
+
+        .content-box {
+            background-color: #43a7a7;
+            padding: 15px;
+            border: 3px solid #dca6d1;
+            margin-bottom: 50px;
+        }
+
+        table {
+          width: 100%;
+          border-collapse: collapse;
+          margin-top: 20px;
+      }
+
+      th, td {
+          border: 1px solid #fefefd;
+          padding: 8px;
+          text-align: center;
+      }
+
+      th {
+          background-color: #43a7a7;
+          color: white;
+      }
+
+      .event img,
+      .event button {
+          max-width: 100%;
+          height: auto;
+          cursor: pointer;
+      }
+
+        .popup {
+            display: none;
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            background-color: #fefefe;
+            padding: 20px;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 800px; /* Adjust the max-width as needed */
+            width: 100%;
+        }
+
+        .popup img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .popup iframe {
+          display: none;
+          width: 100%;
+          height: 500px;
+      }
+
+      .popup .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        padding: 8px;
+        background-color: #fc1605;
+        cursor: pointer;
+        color: #ffffff;
+        border: none;
+        border-radius: 50%;
+        font-size: 16px;
+    }
+    
+    .popup .close:hover {
+        background-color: #d40d05;
+    }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .footer {
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .name {
+            color: #060606;
+            /* Yellow color for the name */
+        }
+    </style>
+</head>
+
+<body>
+    <footer class="footer">
+        Designed by <span class="name">M Rishwanth Kumar</span>
+    </footer>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-2 text-center">
+                <img src="https://www.kmit.in/images/kmit-bar.png" alt="Top Left Image"
+                    class="img-fluid rounded-circle" style="max-width: 150px; max-height: 75px;">
+            </div>
+            <div class="col-6 text-center mx-auto">
+                <h1 class="text-danger mt-3 display-5">NATIONAL SERVICE SCHEME</h1>
+                <h2 class="text-dark small mt-2">Central Sector Scheme of Government of India, Ministry of Youth Affairs
+                    & Sports.</h2>
+            </div>
+            <div class="col-2 text-center">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/90/NSS-symbol.jpeg"
+                    class="img-fluid rounded-circle" style="max-width: 150px; max-height: 80px;">
+            </div>
+        </div>
+
+        <!-- Navigation container row -->
+        <div class="row" style="background-color: #fefefd; padding: 10px;">
+            <div class="col-md-12">
+                <div class="d-flex justify-content-around">
+                    <!-- Center the small boxes and add spacing -->
+                    <!-- Home -->
+                    <div class="col small-box">
+                        <a href="home.html" style="color: #080808;">Home</a>
+                    </div>
+                    <!-- About Us -->
+                    <div class="col small-box">
+                        <a href="about_us.html" style="color: #080808;">About Us</a>
+                    </div>
+                    <!-- Gallery -->
+                    <div class="col small-box">
+                        <a href="gallery.html" style="color: #080808;">Gallery</a>
+                    </div>
+                    <!-- Events -->
+                    <div class="col small-box">
+                        <a href="events.html" style="color: #080808;">Events</a>
+                    </div>
+                    <!-- Blood Community -->
+                    <div class="col small-box">
+                        <a href="blood_community.html" onclick="window.open(this.href, '_blank'); "
+                            style="color: #080808;">Blood Community</a>
+                    </div>
+                    <!-- Contact Us -->
+                    <div class="col small-box">
+                        <a href="contact_us.html" style="color: #080808;">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row content-section">
+                <div class="col-md-12">
+                    <div class="content-box">
+                        <h2 class="text-white">Events</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Event Number</th>
+                                    <th>Description</th>
+                                    <th>Date</th>
+                                    <th>No. of Faculty</th>
+                                    <th>No. of Students</th>
+                                    <th>Report</th>
+                                    <th>Images</th>
+                                </tr>
+                            </thead>
+                            <tbody id="eventListBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="popup" class="popup">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <object id="popupObject" data="" type="application/pdf" width="100%" height="500px"></object>
+        </div>
+    
+        <script type="module">
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+            import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-analytics.js";
+            // TODO: Add SDKs for Firebase products that you want to use
+            // https://firebase.google.com/docs/web/setup#available-libraries
+          
+            // Your web app's Firebase configuration
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            const firebaseConfig = {
+              apiKey: "AIzaSyAdZVWdgrNVd4k-OnaaOBTQp9PiJJmc7yM",
+              authDomain: "nsskmitwebsite.firebaseapp.com",
+              projectId: "nsskmitwebsite",
+              storageBucket: "nsskmitwebsite.appspot.com",
+              messagingSenderId: "749382783019",
+              appId: "1:749382783019:web:df246a10689aac4c245a6e",
+              measurementId: "G-QPPHB5CYPQ"
+            };
+          
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const analytics = getAnalytics(app);
+    
+            // Initialize Firestore
+            var db = firebase.firestore();
+    
+            let currentPopupId = null;
+    
+            function openPopup(pdfUrl, eventId) {
+                if (currentPopupId !== null) {
+                    closePopup(currentPopupId);
+                }
+    
+                const popupObject = document.getElementById('popupObject');
+                const popup = document.getElementById('popup');
+    
+                if (popupObject && popup) {
+                    popupObject.data = pdfUrl;
+                    popup.style.display = 'block';
+                    currentPopupId = eventId;
+                } else {
+                    console.error("Popup elements not found.");
+                }
+            }
+    
+            function closePopup() {
+                const popup = document.getElementById('popup');
+                popup.style.display = 'none';
+                currentPopupId = null;
+            }
+    
+            function updateEventsTable(events) {
+                const eventsTableBody = document.getElementById('eventListBody');
+                eventsTableBody.innerHTML = '';
+    
+                events.forEach(event => {
+                    const newRow = document.createElement('tr');
+                    newRow.innerHTML = `
+                        <td>${event.eventNumber}</td>
+                        <td>${event.eventDescription}</td>
+                        <td>${event.eventDate}</td>
+                        <td>${event.facultyCount}</td>
+                        <td>${event.studentCount}</td>
+                        <td><button onclick="openPopup('${event.reportfile}', ${event.eventId})">Open Report</button></td>
+                        <td><button onclick="openPopup('${event.imagefile}', ${event.eventId})">Open Image</button></td>
+                    `;
+                    eventsTableBody.appendChild(newRow);
+                });
+            }
+    
+            function fetchEventsFromFirebase() {
+                db.collection("events")
+                    .get()
+                    .then((querySnapshot) => {
+                        const events = [];
+                        querySnapshot.forEach((doc) => {
+                            const eventData = doc.data();
+                            events.push({
+                                eventId: doc.id,
+                                eventNumber: eventData.eventNumber,
+                                eventDescription: eventData.eventDescription,
+                                eventDate: eventData.eventDate,
+                                facultyCount: eventData.facultyCount,
+                                studentCount: eventData.studentCount,
+                                reportfile: eventData.reportfile,
+                                imagefile: eventData.imagefile
+                                // Add other fields as needed
+                            });
+                        });
+                        updateEventsTable(events);
+                    })
+                    .catch((error) => {
+                        console.error("Error fetching events:", error);
+                    });
+            }
+    
+            fetchEventsFromFirebase();
+        </script>
+</body>
+</html>
